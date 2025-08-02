@@ -22,7 +22,7 @@ priority_requestor_addresses = [
 # Used to estimate proving capacity and accept only as much work as the prover can handle. Estimates
 # can be derived from benchmarking using Bento CLI or from data based on fulfilling market orders.
 # For more information, see https://docs.beboundless.xyz/provers/broker#benchmarking-bento
-peak_prove_khz = 100
+peak_prove_khz = 600
 # Optional max cycles (in mcycles)
 #
 # Orders over this max_cycles will be skipped after preflight
@@ -43,7 +43,7 @@ lookback_blocks = 300 # 300 blocks ~ 1 hour @ 12s block times
 # Max stake amount, denominated in the Boundless staking token.
 #
 # Requests that require a higher stake than this will not be considered.
-max_stake = "25" # USDC
+max_stake = "5" # USDC
 # Max input / image file size allowed for downloading from request URLs.
 max_file_size = 50_000_000
 # Max retries for fetching input / image contents from URLs
@@ -55,7 +55,7 @@ max_concurrent_proofs = 2
 # Maximum number of orders to concurrently work on pricing
 #
 # Used to limit pricing tasks spawned to prevent overwhelming the system
-#max_concurrent_preflights = 4
+max_concurrent_preflights = 4
 # Order pricing priority mode
 #
 # Determines how orders are prioritized for pricing. Options:
@@ -87,7 +87,7 @@ max_critical_task_retries = 10
 # Optional additional gas to add to the transaction for lockinRequest, good
 # for increasing the priority if competing with multiple provers during the
 # same block
-#lockin_priority_gas = 100
+lockin_priority_gas = 100
 # Optional balance warning threshold (in native token)
 #
 # If the submitter balance drops below this the broker will issue warning logs
@@ -107,7 +107,7 @@ stake_balance_error_threshold = "5"
 # Optional cache directory for storing downloaded images and inputs
 #
 # If not set, files will be re-downloaded every time
-#cache_dir = "./cache"
+cache_dir = "./cache"
 # Gas estimate for lockin call
 #
 # Used for estimating the gas costs associated with an order during pricing. If not set a
